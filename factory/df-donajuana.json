@@ -1,0 +1,15 @@
+{
+	"name": "df-donajuana",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned,UserAssigned",
+		"principalId": "f8b0e52c-3ea1-481d-8757-32739a1ee3f5",
+		"tenantId": "d1355907-e07f-4918-90d2-7384a7c1c1ea",
+		"userAssignedIdentities": {
+			"/subscriptions/88657650-5e82-4f97-94b3-a763cd577ba4/resourcegroups/donajuana-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MI-DF": {
+				"clientId": "f2835f95-a3bd-4841-bc99-c8c12d8659eb",
+				"principalId": "3833ceed-6c82-4d3f-84df-92ebdf5f2591"
+			}
+		}
+	}
+}

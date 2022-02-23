@@ -1,0 +1,85 @@
+{
+	"name": "CopyPipeline_cf-templates-1p733xllt513f-us-east-1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_sou",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "cf-templates-1p733xllt513f-us-east-1//"
+					},
+					{
+						"name": "Destination",
+						"value": "cf-templates-1p733xllt513f-us-east-1//"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AmazonS3ReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*"
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"skipErrorFile": {
+						"fileMissing": true,
+						"fileForbidden": true,
+						"invalidFileName": true
+					},
+					"validateDataConsistency": false,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Warning",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "SADonaJuana",
+								"type": "LinkedServiceReference"
+							},
+							"path": "logs"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_sou",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_sou",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-02-13T22:54:08Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

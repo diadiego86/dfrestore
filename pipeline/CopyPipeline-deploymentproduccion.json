@@ -1,0 +1,85 @@
+{
+	"name": "CopyPipeline-deploymentproduccion",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_l88",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "deploymentproduccion//"
+					},
+					{
+						"name": "Destination",
+						"value": "deploymentproduccion//"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AmazonS3ReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*"
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": false,
+					"skipErrorFile": {
+						"fileMissing": true,
+						"fileForbidden": true,
+						"invalidFileName": true
+					},
+					"validateDataConsistency": false,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Warning",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "SADonaJuana",
+								"type": "LinkedServiceReference"
+							},
+							"path": "logs"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_l88",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_l88",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-02-11T21:32:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

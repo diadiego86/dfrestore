@@ -1,0 +1,18 @@
+{
+	"name": "DestinationDataset_sou",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SADonaJuana",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "cf-templates-1p733xllt513f-us-east-1"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
