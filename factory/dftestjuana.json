@@ -1,0 +1,9 @@
+{
+	"name": "dftestjuana",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4db8af53-c2b4-4dde-812c-52dcffb4545a",
+		"tenantId": "d1355907-e07f-4918-90d2-7384a7c1c1ea"
+	}
+}
